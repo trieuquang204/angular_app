@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public isMarried:boolean = false;
-  public txtFullName:string = '';
-
-  onGetFullName(value:string) {
-    this.txtFullName = value
-  }
+  public content:string = "This is SOME textThis is some textThis is some textThis is some textThis is some text";
 }
