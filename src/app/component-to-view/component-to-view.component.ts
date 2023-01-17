@@ -1,24 +1,24 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'component-to-view',
   templateUrl: './component-to-view.component.html',
   styleUrls: ['./component-to-view.component.css']
 })
-export class ComponentToViewComponent implements OnInit {
+export class ComponentToViewComponent implements OnInit, OnChanges {
 
- public txtFullName:string = "";
- @Output('tttttt') onHandleFullName = new EventEmitter<string>();
+  @Input('total') totalCon:any = null
 
-
-
-  constructor() {}
+  constructor() {
+    console.log('constructor')
+  }
 
   ngOnInit() {
 
   }
 
-  onSubmitForm() {
-    this.onHandleFullName.emit(this.txtFullName)
+  ngOnChanges(SimpleChange:any) {
+    console.log('ngOnChanges')
+    console.log('SimpleChange', SimpleChange)
   }
 }

@@ -1,24 +1,11 @@
-<div class="container mt-2">
-  <div class="row">
-    <div class="col-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Ten pipe</th>
-            <th>Du lieu dau vao</th>
-            <th>Ket qua hien thi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>UpperCase</td>
-            <td>{{ content }}</td>
-            <td>{{ content | lowercase }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="container">
+  <h1>App component</h1>
+  <div>
+    <input type="number" class="form-control" [(ngModel)]="a">
+    <input type="number" class="form-control" [(ngModel)]="b">
+    <button type="button" class="btn btn-danger" (click)="amount()">Tinh tong</button>
+</div>
+  <div>
+    <component-to-view [total]="total"></component-to-view>
   </div>
 </div>
