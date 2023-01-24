@@ -3,18 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ComponentToViewComponent } from './component-to-view/component-to-view.component';
+import { FirstComponent } from './components/first/first.component';
+import { SecondComponent } from './components/second/second.component';
+
+// Service
+import { MovieService } from './services/movie.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentToViewComponent
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    MovieService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
