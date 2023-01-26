@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
@@ -10,6 +11,21 @@ import { SecondComponent } from './components/second/second.component';
 import { MovieService } from './services/movie.service';
 
 
+const appRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: '/about',
+    pathMatch: 'full'
+  },
+  {
+    path: 'contact',
+    component: SecondComponent
+  },
+  {
+    path: '**',
+    component: FirstComponent
+  },
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +34,8 @@ import { MovieService } from './services/movie.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     MovieService,
