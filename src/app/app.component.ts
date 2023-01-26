@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   public title: string = "Quan ly phim"
 
+  constructor(
+    public routerService: Router
+  ) {
+
+  }
+
   ngOnInit() {
 
+  }
+
+  navagate(url: string) {
+    // this.routerService.navigate([url])
+    // c2:
+    this.routerService.navigateByUrl(url)
   }
 
 }

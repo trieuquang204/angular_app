@@ -14,16 +14,16 @@ import { MovieService } from './services/movie.service';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/about',
+    redirectTo: '/index',
     pathMatch: 'full'
   },
   {
     path: 'contact',
-    component: SecondComponent
+    component: FirstComponent
   },
   {
-    path: '**',
-    component: FirstComponent
+    path: 'about',
+    component: SecondComponent
   },
 ]
 @NgModule({
