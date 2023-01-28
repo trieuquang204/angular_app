@@ -6,31 +6,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
+import { ProductsComponent } from './components/products/products.component';
+
+import { appRoutes } from './app.routers';
 
 // Service
 import { MovieService } from './services/movie.service';
+import { ProductService } from './services/product.service';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
-
-const appRoutes: Routes = [
-  {
-    path: '',
-    redirectTo: '/index',
-    pathMatch: 'full'
-  },
-  {
-    path: 'contact',
-    component: FirstComponent
-  },
-  {
-    path: 'about',
-    component: SecondComponent
-  },
-]
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    ProductsComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +30,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     MovieService,
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })
