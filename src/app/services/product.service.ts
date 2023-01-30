@@ -27,8 +27,21 @@ export class ProductService {
 
   constructor() { }
 
-  getAllProducts() {
-    return this.products;
+  getAllProducts(name? : string, price? : number) {
+    let result: Product[] = this.products;
+
+    if(name) {
+      result = this.products.filter(x => {
+        return x.name.toLowerCase().indexOf(name.toLowerCase()) != -1;
+      })
+    }
+
+    if(price) {
+      result = this.products.filter(x => {
+        return x.price == price
+      })
+    }
+    return result;
   }
 
   getProductById(id: number) {
