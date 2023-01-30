@@ -14,6 +14,8 @@ import { appRoutes } from './app.routers';
 import { MovieService } from './services/movie.service';
 import { ProductService } from './services/product.service';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     FirstComponent,
     SecondComponent,
     ProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductListComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,

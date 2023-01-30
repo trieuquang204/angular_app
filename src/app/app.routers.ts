@@ -5,13 +5,15 @@ import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 export const appRoutes: Routes = [
-  {
-    path: '',
-    redirectTo: '/index',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: '/index',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'contact',
     component: FirstComponent
@@ -22,10 +24,25 @@ export const appRoutes: Routes = [
   },
   {
     path: 'products',
-    component: ProductsComponent
-  },
-  {
-    path: 'products/:id',
-    component: ProductDetailComponent
+    // component: ProductsComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'products/list',
+        pathMatch: 'full',
+      },
+      {
+        path: 'list',
+        component: ProductListComponent,
+      },
+      {
+        path: ':id',
+        component: ProductDetailComponent,
+      },
+      {
+        path: 'edit/:id',
+        component: ProductEditComponent,
+      },
+    ],
   },
 ]

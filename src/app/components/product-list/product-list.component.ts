@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from 'src/app/models/product.class';
 import { ProductService } from 'src/app/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
-export class ProductsComponent implements OnInit {
-
+export class ProductListComponent {
   public products: Product[] = [];
   public name : string = '';
   public price : number = 0;

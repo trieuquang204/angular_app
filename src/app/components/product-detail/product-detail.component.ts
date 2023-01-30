@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product.class';
 import { ProductService } from 'src/app/services/product.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,6 +17,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 constructor(
   public activeRoute : ActivatedRoute,
   public productService : ProductService,
+  public routerService : Router
 ) {
 
 }
@@ -46,4 +48,22 @@ constructor(
     let id = +this.activeRoute.snapshot.params['id'];
     this.product = this.productService.getProductById(id);
   }
+
+  onBackToList() {
+    // this.routerService.navigate(['products/list'])
+
+    this.routerService.navigate(['list'], {
+      relativeTo: this.activeRoute.parent
+    })
+  }
+
+  onEdit() {
+    // this.routerService.navigate([`/products/edit/${this.product.id}`])
+
+    this.routerService.navigate(['edit', this.product.id ], {
+      relativeTo: this.activeRoute.parent
+    })
+  }
+
+  onDelete() {}
 }
