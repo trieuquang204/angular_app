@@ -10,12 +10,18 @@ import { ProductsComponent } from './components/products/products.component';
 
 import { appRoutes } from './app.routers';
 
-// Service
-import { MovieService } from './services/movie.service';
-import { ProductService } from './services/product.service';
+
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { LoginComponent } from './components/login/login.component';
+
+// Service
+import { MovieService } from './services/movie.service';
+import { ProductService } from './services/product.service';
+import { AuthGuard } from './services/guards/auth.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +31,8 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ProductsComponent,
     ProductDetailComponent,
     ProductListComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +42,7 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
   providers: [
     MovieService,
     ProductService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

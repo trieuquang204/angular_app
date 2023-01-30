@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of products" [routerLink]="['/products', item.id]">
+    <tr *ngFor="let item of products" [routerLink]="['/product', item.id]">
       <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
       <td>{{ item.price | currency : 'VND': true  }}</td>

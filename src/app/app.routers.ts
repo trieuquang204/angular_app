@@ -7,6 +7,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { LoginComponent } from './components/login/login.component';
+
+import { AuthGuard } from './services/guards/auth.guard';
 
 export const appRoutes: Routes = [
   // {
@@ -23,26 +26,26 @@ export const appRoutes: Routes = [
     component: SecondComponent
   },
   {
-    path: 'products',
+    path: 'product:/id',
     // component: ProductsComponent,
     children: [
       {
         path: '',
-        redirectTo: 'products/list',
-        pathMatch: 'full',
-      },
-      {
-        path: 'list',
-        component: ProductListComponent,
-      },
-      {
-        path: ':id',
         component: ProductDetailComponent,
       },
       {
-        path: 'edit/:id',
+        path: 'edit',
         component: ProductEditComponent,
       },
     ],
+  },
+  {
+    path: 'products',
+    component: ProductListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ]

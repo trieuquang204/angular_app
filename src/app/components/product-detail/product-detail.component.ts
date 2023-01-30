@@ -60,7 +60,7 @@ constructor(
   onEdit() {
     // this.routerService.navigate([`/products/edit/${this.product.id}`])
 
-    this.routerService.navigate(['edit', this.product.id ], {
+    this.routerService.navigate(['edit'], {
       relativeTo: this.activeRoute.parent
     })
   }
