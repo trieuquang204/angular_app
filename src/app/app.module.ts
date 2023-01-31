@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
@@ -15,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 
 // Service
 import { MovieService } from './services/movie.service';
+import { ApiService } from './services/apiservice';
 
 
 @NgModule({
@@ -28,10 +30,12 @@ import { MovieService } from './services/movie.service';
     BrowserModule,
     FormsModule,
     ProductManagementModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
     MovieService,
+    ApiService,
   ],
   bootstrap: [AppComponent]
 })
