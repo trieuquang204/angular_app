@@ -22,7 +22,7 @@
   <tbody>
     <tr *ngFor="let item of products" [routerLink]="['/product', item.id]">
       <td>{{ item.id }}</td>
-      <td>{{ item.name }}</td>
+      <td>{{ item.name | capitalize }}</td>
       <td>{{ item.price | currency : 'VND': true  }}</td>
       <td>{{ item.status ? 'Active' : 'Deactive' }} </td>
       <td>

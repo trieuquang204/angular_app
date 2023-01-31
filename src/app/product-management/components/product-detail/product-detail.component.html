@@ -1,5 +1,5 @@
 <ng-container *ngIf="product; else noProduct">
-  <h1>Name: {{ product.name }}</h1>
+  <h1>Name: {{ product.name | capitalize }}</h1>
   <h2>Price: {{ product.price | currency : 'VND' : true }}</h2>
   <h3>Status: {{ product.status ? 'Active' : 'Deactive'}}</h3>
 

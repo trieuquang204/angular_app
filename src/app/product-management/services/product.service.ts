@@ -7,19 +7,19 @@ export class ProductService {
   public products : Product[] = [
     {
       id: 1,
-      name: 'Iphone 7 plus',
+      name: 'iphone 7 plus test a hii',
       price: 44,
       status: true
     },
     {
       id: 2,
-      name: 'Iphone 8 plus',
+      name: 'iphone 8 plus e gii',
       price: 11,
       status: false
     },
     {
       id: 3,
-      name: 'Oppo',
+      name: 'oppo huu',
       price: 123,
       status: true
     },
